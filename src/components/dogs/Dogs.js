@@ -8,6 +8,7 @@ import { withToggler } from '../../context/ToggleProvider.js'
 // COMPONENTS
 import './Dogs.css'
 import votedForIcon from '../images/voted.png'
+import CurrentDog from './CurrentDog.js'
 
 class Dogs extends Component {
     constructor() {
@@ -52,6 +53,7 @@ class Dogs extends Component {
                         })}
                     </select>
                     <button>View Dog</button>
+                    {this.state.currentBreed === "" ? <div></div> : <CurrentDog/>}
                 </form>
             </section>
         )
