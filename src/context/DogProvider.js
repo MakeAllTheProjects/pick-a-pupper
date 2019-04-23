@@ -16,7 +16,7 @@ class DogProvider extends Component {
     getAllDogBreeds = async () => {
         await axios.get("https://dog.ceo/api/breeds/list").then(res => {
             this.setState({
-                breedList: ["all", ...res.data.message]
+                breedList: ["any", ...res.data.message]
             })
         })
     }

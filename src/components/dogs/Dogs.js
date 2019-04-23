@@ -10,6 +10,12 @@ import './Dogs.css'
 import votedForIcon from '../images/voted.png'
 
 class Dogs extends Component {
+    constructor() {
+        super()
+        this.state = {
+            currentBreed: ""
+        }
+    }
 
     componentDidMount() {
         this.props.getAllDogBreeds()
@@ -37,6 +43,7 @@ class Dogs extends Component {
                     <p className="logout" onClick={this.handleLogout}>Logout</p>
                 </div>
                 <form name="breedForm" className="breed-form-container">
+                    <p>What kind of dog would you like to see?</p>
                     <select name="breedSelection" onChange={this.handleChange}>
                         {this.props.breedList.map((breed, i) => {
                             return  <option key={i} value={breed}>
