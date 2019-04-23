@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+}
+
+.dogs-container {
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.dogs-header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10pt 20pt 0 10pt;
+}
+
+.dogs-header-container > h1 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 4vh;
+    text-align: center;
+    color: white;
+    filter: drop-shadow(rgba(0, 0, 128, 0.726) 1px 1px 5px);
+    position: fixed;
+    left: 10pt;
+}
+
+.dogs-header-container > img {
+    height: 2.5vh;
+    filter: invert(96%);
+}
+
+.dogs-header-container > p {
+    color: white;
+    margin-left: 15pt;
+}
