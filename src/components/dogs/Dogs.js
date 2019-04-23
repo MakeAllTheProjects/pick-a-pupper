@@ -15,6 +15,13 @@ class Dogs extends Component {
         this.props.getAllDogBreeds()
     }
 
+    handleChange = e => {
+        console.log(e)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     handleLogout = () => {
         localStorage.removeItem('username')
         localStorage.removeItem('votes')
@@ -22,7 +29,6 @@ class Dogs extends Component {
     }
 
     render(props) {
-        console.log(this.props.breedList)
         return (
             <section className="dogs-container">
                 <div className="dogs-header-container">
@@ -30,6 +36,16 @@ class Dogs extends Component {
                     <img alt="dogs you have voted for icon" src={votedForIcon}/>
                     <p className="logout" onClick={this.handleLogout}>Logout</p>
                 </div>
+                <form name="breedForm" className="breed-form-container">
+                    <select name="breedSelection" onChange={this.handleChange}>
+                        {this.props.breedList.map((breed, i) => {
+                            return  <option key={i} value={breed}>
+                                        {breed}
+                                    </option>
+                        })}
+                    </select>
+                    <button>View Dog</button>
+                </form>
             </section>
         )
     }
