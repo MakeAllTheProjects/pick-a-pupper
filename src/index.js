@@ -12,10 +12,10 @@ import App from './App.js'
 
 ReactDOM.render(
     <BrowserRouter>
-        <DogProvider>
-            <ToggleProvider>
+        <ToggleProvider>
+            <DogProvider>
                 <App/>
-            </ToggleProvider>
-        </DogProvider>
+            </DogProvider>
+        </ToggleProvider>
     </BrowserRouter>,
 document.getElementById('root'))

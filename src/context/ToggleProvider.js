@@ -2,9 +2,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-export const ToggleContext = React.createContext()
+const ToggleContext = React.createContext()
 
-export class ToggleProvider extends Component {
+class ToggleProvider extends Component {
     constructor() {
         super()
         this.state = {
@@ -20,10 +20,12 @@ export class ToggleProvider extends Component {
 
     render() {
         return (
-            <ToggleContext.Provider value={{
-                ...this.state,
-                startToggler: this.startToggler
-            }}>
+            <ToggleContext.Provider 
+                value={{
+                    ...this.state,
+                    startToggler: this.startToggler
+                }}
+            >
                 {this.props.children}
             </ToggleContext.Provider>
         )

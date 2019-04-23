@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 
 // CONTEXT
+import { withDogs } from '../../context/DogProvider.js'
 import { withToggler } from '../../context/ToggleProvider.js'
 
 // COMPONENTS
@@ -10,6 +11,10 @@ import votedForIcon from '../images/voted.png'
 
 class Dogs extends Component {
 
+    componentDidMount() {
+        this.props.getAllDogBreeds()
+    }
+
     handleLogout = () => {
         localStorage.removeItem('username')
         localStorage.removeItem('votes')
@@ -17,6 +22,7 @@ class Dogs extends Component {
     }
 
     render(props) {
+        console.log(this.props.breedList)
         return (
             <section className="dogs-container">
                 <div className="dogs-header-container">
@@ -29,4 +35,4 @@ class Dogs extends Component {
     }
 }
 
-export default withToggler(Dogs)
+export default withToggler(withDogs(Dogs))

@@ -1,21 +1,34 @@
+// DEPENDENCIES
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import axios from 'axios'
 
-export const DogContext = React.createContext()
+const DogContext = React.createContext()
 
-export class DogProvider extends Component {
+class DogProvider extends Component {
     constructor() {
         super()
         this.state = {
-
+            breedList: []
         }
+    }
+
+    getAllDogBreeds = () => {
+        axios.get("https://dog.ceo/api/breeds/list").then(res => {
+            this.setState({
+                breedList: ["all", ...res.data.message]
+            })
+        })
     }
 
     render() {
         return (
-            <DogContext.Provider value={{
-                ...this.state
-            }}>
+            <DogContext.Provider 
+                value={{
+                    ...this.state,
+                    getAllDogBreeds: this.getAllDogBreeds
+                }}
+            >
                 {this.props.children}
             </DogContext.Provider>
         )
@@ -25,7 +38,7 @@ export class DogProvider extends Component {
 export default withRouter(DogProvider)
 
 export const withDogs = C => props => (
-    <DogProvider.Consumer>
-        { value => <C {...props} {...value}/> }
-    </DogProvider.Consumer>
+    <DogContext.Consumer>
+        {value => <C {...props} {...value}/>}
+    </DogContext.Consumer>
 )
