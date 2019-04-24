@@ -35,8 +35,13 @@ class Dogs extends Component {
 
     handleSelectBreed = e => {
         e.preventDefault()
-        console.log(this.state.breedSelection)
         this.props.getBreedData(this.state.breedSelection)
+    }
+
+    handleSubmitRating = e => {
+        e.preventDefault()
+        console.log(e)
+        this.props.storeRating(this.state.rating)
     }
 
     render(props) {
@@ -66,8 +71,9 @@ class Dogs extends Component {
                             :   <div 
                                     className="dog-image-container" 
                                     style={{backgroundImage: `url(${this.props.currentDogImg})`}}
-                                >
-                                    <form className="dog-rating-container" name="dogRating">
+                                >   
+                                    <form className="dog-rating-container" name="dogRating" onSubmit={this.handleSubmitRating}>
+                                        <h3>On a scale of 10, how would you rate this dog?</h3>
                                         <input type="range" min="10" max="16" list="tickmarks" name="rating" onChange={this.handleChange}/>
                                         <datalist id="tickmarks">
                                             <option value="16"/>
@@ -79,6 +85,7 @@ class Dogs extends Component {
                                             <option value="10"/>
                                         </datalist>
                                         <p>{this.state.rating}/10</p>
+                                        <button>Rate this dog</button>
                                     </form>
                                 </div>
                     }

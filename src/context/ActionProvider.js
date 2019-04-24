@@ -13,7 +13,8 @@ class ActionProvider extends Component {
             isStarted: false,
             breedList: [],
             breedSelection: "",
-            currentDogImg: ""
+            currentDogImg: "",
+            userRatings: []
         }
     }
 
@@ -51,6 +52,23 @@ class ActionProvider extends Component {
         }
     }
 
+    storeRating = (rating) => {
+        let breed = this.state.currentDogImg
+        breed = breed.split("/")
+        const newRating = {
+            rating: rating,
+            img: this.state.currentDogImg,
+            breed: breed[4],
+            user: localStorage.getItem("username")
+        }
+        const newUserRatings = [...this.state.userRatings, newRating]
+        localStorage.setItem("ratings", JSON.stringify(newUserRatings))
+        this.setState({
+            userRatings: JSON.parse(localStorage.getItem("rating"))
+        })
+        
+    }
+
     render() {
         return (
             <ActionContext.Provider 
@@ -59,7 +77,8 @@ class ActionProvider extends Component {
                     startToggler: this.startToggler,
                     getAllDogBreeds: this.getAllDogBreeds,
                     selectBreed: this.selectBreed,
-                    getBreedData: this.getBreedData
+                    getBreedData: this.getBreedData,
+                    storeRating: this.storeRating
                 }}
             >
                 {this.props.children}

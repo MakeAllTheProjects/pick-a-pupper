@@ -80,7 +80,7 @@
 }
 
 .current-dog-container {
-    margin-top: 25pt;
+    margin-top: 5pt;
     padding: 10pt;
     width: 80vw;
     display: flex;
@@ -91,9 +91,9 @@
 
 .current-dog-container > .dog-image-container {
     width: 80vw;
-    max-width: 300pt;
+    max-width: 400pt;
     height: calc(80vw);
-    max-height: 300pt;
+    max-height: 350pt;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -119,6 +119,11 @@
     box-shadow: rgba(0, 0, 0, 0.479) 0pt -3pt 5pt,
                 rgba(0, 0, 0, 0.411) 0pt -1pt 1pt,
                 inset rgba(255, 255, 255, 0.075) 0pt 0.1pt 3pt;
+}
+
+.dog-rating-container > h3 {
+    text-align: center;
+    margin-bottom: 3pt;
 }
 
 .dog-rating-container > input {
