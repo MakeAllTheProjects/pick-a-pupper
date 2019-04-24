@@ -1,5 +1,6 @@
 // DEPENDENCIES
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 // CONTEXT
 import { withAction } from '../../context/ActionProvider.js'
@@ -21,11 +22,10 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = e => {
         e.preventDefault()
+        console.log(e)
         localStorage.setItem("username", this.state.username)
-        localStorage.setItem("votes", [])
-        this.props.startToggler()
     }
 
     render() {
@@ -34,7 +34,7 @@ class Login extends Component {
                 <form name="loginForm" onSubmit={this.handleSubmit}>
                     <h1>Pick a Pupper</h1>
                     <p>What's your name?</p>
-                    <input name="username" onChange={this.handleChange} />
+                    <input name="username" onChange={this.handleChange}/>
                     <button name="loginBtn">Start</button>
                 </form>
             </section>

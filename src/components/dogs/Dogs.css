@@ -21,9 +21,11 @@
 
 .dogs-header-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
-    align-items: flex-start;
-    padding: 10pt 20pt 0 10pt;
+    align-items: center;
+    width: 100%;
+    padding: 10pt 40pt 0 10pt;
 }
 
 .dogs-header-container > h1 {
@@ -35,7 +37,7 @@
     left: 10pt;
 }
 
-.dogs-header-container > img {
+.dogs-header-container > a > img {
     height: 2.5vh;
     filter: invert(96%);
 }
@@ -51,7 +53,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 20pt;
+    margin-top: 5pt;
 }
 
 .breed-form-container > p {
@@ -80,7 +82,7 @@
 }
 
 .current-dog-container {
-    margin-top: 25pt;
+    margin-top: 5pt;
     padding: 10pt;
     width: 80vw;
     display: flex;
@@ -91,9 +93,10 @@
 
 .current-dog-container > .dog-image-container {
     width: 80vw;
-    max-width: 300pt;
+    max-width: 400pt;
     height: calc(80vw);
-    max-height: 300pt;
+    max-height: 350pt;
+    background-color: rgb(1, 12, 36);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -119,6 +122,15 @@
     box-shadow: rgba(0, 0, 0, 0.479) 0pt -3pt 5pt,
                 rgba(0, 0, 0, 0.411) 0pt -1pt 1pt,
                 inset rgba(255, 255, 255, 0.075) 0pt 0.1pt 3pt;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.dog-rating-container > h3 {
+    text-align: center;
+    margin-bottom: 3pt;
 }
 
 .dog-rating-container > input {
@@ -130,4 +142,15 @@
     display: inline;
     font-size: 20pt;
     vertical-align: top;
+}
+
+.dog-rating-container > button {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2vh;
+    padding: 2pt 15pt;
+    background-color: rgb(6, 59, 175);
+    border-radius: 25px;
+    outline: none;
+    margin-left: 15pt;
+    margin-bottom: 3pt;
 }

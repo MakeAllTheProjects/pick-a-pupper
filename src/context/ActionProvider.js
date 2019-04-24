@@ -13,7 +13,8 @@ class ActionProvider extends Component {
             isStarted: false,
             breedList: [],
             breedSelection: "",
-            currentDogImg: ""
+            currentDogImg: "",
+            userRatings: []
         }
     }
 
@@ -32,23 +33,35 @@ class ActionProvider extends Component {
     }
 
     getBreedData = async (selection) => {
-        console.log(selection)
         if(selection === "any" || selection === ""){
-            console.log("Any dog breed selected.")
             await axios.get("https://dog.ceo/api/breeds/image/random").then(res => {
-                console.log(res.data.message)
                 this.setState({
                     currentDogImg: res.data.message
                 })
             })
         } else {
-            console.log(`${selection} dog breed selected.`)
             await axios.get(`https://dog.ceo/api/breed/${selection}/images/random`).then(res => {
                 this.setState({
                     currentDogImg: res.data.message
                 })
             })
         }
+    }
+
+    storeRating = (rating, selection) => {
+        let breed = this.state.currentDogImg
+        breed = breed.split("/")
+        const newRating = {
+            rating: rating,
+            img: this.state.currentDogImg,
+            breed: breed[4],
+            user: localStorage.getItem("username")
+        }
+        let existingRatings = localStorage.getItem("ratings")
+        existingRatings = existingRatings ? JSON.parse(existingRatings) : []
+        existingRatings.push(newRating)
+        localStorage.setItem("ratings", JSON.stringify(existingRatings))
+        this.getBreedData(selection)
     }
 
     render() {
@@ -59,7 +72,8 @@ class ActionProvider extends Component {
                     startToggler: this.startToggler,
                     getAllDogBreeds: this.getAllDogBreeds,
                     selectBreed: this.selectBreed,
-                    getBreedData: this.getBreedData
+                    getBreedData: this.getBreedData,
+                    storeRating: this.storeRating
                 }}
             >
                 {this.props.children}
