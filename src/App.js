@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 // CONTEXT
-import { withToggler } from './context/ToggleProvider.js'
+import { withAction } from './context/ActionProvider.js'
 
 // COMPONENTS
 import './index.css'
@@ -11,13 +11,12 @@ import Dogs from './components/dogs/Dogs.js'
 
 class App extends Component {
     render(props) {
-        console.log(this.props.isStarted)
         return (
             <div className='app-container'>
-                {this.props.isStarted ? <Dogs/> : <Login/>}
+                {this.props.isStarted ? <Login/> : <Dogs/>}
             </div>
         )
     }
 }
 
-export default withToggler(App)
+export default withAction(App)
