@@ -22,11 +22,10 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = e => {
         e.preventDefault()
         console.log(e)
         localStorage.setItem("username", this.state.username)
-        localStorage.setItem("ratings", ["Dog"])
     }
 
     render() {

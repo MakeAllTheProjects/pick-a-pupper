@@ -38,7 +38,6 @@ class App extends Component {
                         }
                     />
                 </Switch>
-                {/* {this.props.isStarted ? <Login/> : <Dogs/>} */}
             </div>
         )
     }

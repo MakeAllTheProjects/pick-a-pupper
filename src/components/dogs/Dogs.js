@@ -1,5 +1,6 @@
 // DEPENDENCIES
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 // CONTEXT
 import { withAction } from '../../context/ActionProvider.js'
@@ -29,7 +30,7 @@ class Dogs extends Component {
 
     handleLogout = () => {
         localStorage.removeItem('username')
-        localStorage.removeItem('votes')
+        localStorage.removeItem('ratings')
         this.props.startToggler()
     }
 
@@ -41,7 +42,7 @@ class Dogs extends Component {
     handleSubmitRating = e => {
         e.preventDefault()
         console.log(e)
-        this.props.storeRating(this.state.rating)
+        this.props.storeRating(this.state.rating, this.state.breedSelection)
     }
 
     render(props) {
@@ -49,7 +50,9 @@ class Dogs extends Component {
             <section className="dogs-container">
                 <div className="dogs-header-container">
                     <h1>Pick a Pupper</h1>
-                    <img alt="dogs you have voted for icon" src={votedForIcon}/>
+                    <Link to="/user">
+                        <img alt="dogs you have voted for icon" src={votedForIcon}/>
+                    </Link>
                     <p className="logout" onClick={this.handleLogout}>Logout</p>
                 </div>
                 <form name="breedForm" className="breed-form-container" onSubmit={this.handleSelectBreed}>

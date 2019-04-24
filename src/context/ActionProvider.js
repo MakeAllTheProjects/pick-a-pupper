@@ -33,17 +33,13 @@ class ActionProvider extends Component {
     }
 
     getBreedData = async (selection) => {
-        console.log(selection)
         if(selection === "any" || selection === ""){
-            console.log("Any dog breed selected.")
             await axios.get("https://dog.ceo/api/breeds/image/random").then(res => {
-                console.log(res.data.message)
                 this.setState({
                     currentDogImg: res.data.message
                 })
             })
         } else {
-            console.log(`${selection} dog breed selected.`)
             await axios.get(`https://dog.ceo/api/breed/${selection}/images/random`).then(res => {
                 this.setState({
                     currentDogImg: res.data.message
@@ -52,7 +48,7 @@ class ActionProvider extends Component {
         }
     }
 
-    storeRating = (rating) => {
+    storeRating = (rating, selection) => {
         let breed = this.state.currentDogImg
         breed = breed.split("/")
         const newRating = {
@@ -61,12 +57,11 @@ class ActionProvider extends Component {
             breed: breed[4],
             user: localStorage.getItem("username")
         }
-        const newUserRatings = [...this.state.userRatings, newRating]
-        localStorage.setItem("ratings", JSON.stringify(newUserRatings))
-        this.setState({
-            userRatings: JSON.parse(localStorage.getItem("rating"))
-        })
-        
+        let existingRatings = localStorage.getItem("ratings")
+        existingRatings = existingRatings ? JSON.parse(existingRatings) : []
+        existingRatings.push(newRating)
+        localStorage.setItem("ratings", JSON.stringify(existingRatings))
+        this.getBreedData(selection)
     }
 
     render() {
