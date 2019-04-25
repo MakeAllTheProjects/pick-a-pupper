@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 // CONTEXT
 import { withAction } from '../../context/ActionProvider.js'
@@ -12,7 +12,7 @@ class Login extends Component {
     constructor() {
         super()
         this.state = {
-            username: ""
+            username: "",
         }
     }
 
@@ -24,11 +24,12 @@ class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(e)
-        localStorage.setItem("username", this.state.username)
+        localStorage.setItem("username", this.state.username)        
+        this.props.history.push('/home')
     }
 
     render() {
+        console.log(this.props.isStarted)
         return (
             <section className='login-container'>
                 <form name="loginForm" onSubmit={this.handleSubmit}>
@@ -42,4 +43,4 @@ class Login extends Component {
     }
 }
 
-export default withAction(Login)
+export default withRouter(withAction(Login))
