@@ -19,7 +19,7 @@ class App extends Component {
                     <Route
                         exact path ="/"
                         render={rProps => localStorage.getItem("username")
-                            ? <Redirect to="/home"/>
+                            ? <Redirect push to="/home"/>
                             : <Login/>
                         }
                     />

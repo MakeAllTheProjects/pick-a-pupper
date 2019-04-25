@@ -10,7 +10,7 @@ class ActionProvider extends Component {
         super()
         this.state = {
             username: localStorage.getItem("username"),
-            isStarted: false,
+            isStarted: true,
             breedList: [],
             breedSelection: "",
             currentDogImg: "",
