@@ -50,7 +50,7 @@ class Dogs extends Component {
             <section className="dogs-container">
                 <div className="dogs-header-container">
                     <h1>Pick a Pupper</h1>
-                    <p>{JSON.parse(localStorage.getItem("ratings")).length}</p>
+                    <p>{localStorage.getItem("ratings") ? JSON.parse(localStorage.getItem("ratings")).length : 0}</p>
                     <Link to="/user">
                         <img alt="dogs you have voted for icon" src={votedForIcon}/>
                     </Link>

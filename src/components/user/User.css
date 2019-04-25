@@ -6,7 +6,7 @@
 .user-ratings-container {
     background-image: url('../images/background.png');
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -53,8 +53,8 @@
 }
 
 .rated-dog-card {
-    width: 175pt;
-    height: 175pt;
+    width: 200pt;
+    height: 200pt;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
