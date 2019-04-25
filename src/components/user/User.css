@@ -80,3 +80,34 @@
     background-color: rgba(0, 0, 0, 0.582);
     border-radius: 0 0 10pt 10pt;
 }
+
+@media screen and (max-width: 1025px) {
+ 
+    .user-heading {
+        padding: 20pt 20pt 0 10pt;
+    }
+    
+    .user-heading > h1 {
+        left: 15pt;
+    }
+    
+    .user-heading > a > img {
+        height: 3.5vh;
+        margin-top: 0;
+    }
+    
+    .user-heading > p {
+        font-size: 3vh;
+        margin: -6pt 0 0 25pt;
+    }
+    
+    .rated-dog-card {
+        width: 240pt;
+        height: 240pt;
+    }
+    
+    .rated-dog-card > p {
+        font-size: 18pt;
+        padding: 3pt 5pt;
+    } 
+}

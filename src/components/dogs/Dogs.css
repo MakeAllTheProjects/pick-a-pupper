@@ -154,3 +154,162 @@
     margin-left: 15pt;
     margin-bottom: 3pt;
 }
+
+/* Tablet */
+@media screen and (max-width: 1025px) {
+    .dogs-header-container {
+        padding: 20pt 60pt 0 15pt;
+    }
+    
+    .dogs-header-container > h1 {
+        left: 15pt;
+    }
+    
+    .dogs-header-container > a > img {
+        height: 3.75vh;
+    }
+    
+    .dogs-header-container > p {
+        font-size: 3vh;
+        margin: -1.25vh 5pt 0 20pt
+    }
+    
+    .breed-form-container {
+        margin-top: 5pt;
+    }
+
+    .breed-form-container > h3 {
+        font-size: 4vh;
+    }
+    
+    .breed-form-container > p {
+        font-size: 3vh;
+    }
+    
+    .breed-form-container > select {
+        margin-top: 2vh;
+        font-size: 3vh;
+    }
+    
+    .breed-form-container > select option {
+        font-size: 3vh;
+    }
+    
+    .breed-form-container > button {
+        margin-top: 2vh;
+        font-size: 3vh;
+        padding: 5px 35px 8px 35px;
+    }
+    
+    .dog-rating-container > h3 {
+        margin: 1vh 0 2vh 0;
+        font-size: 3vh;
+    }
+    
+    .dog-rating-container > input {
+        width: 150pt;
+        margin: 5pt 7pt 0 15pt;
+    }
+    
+    .dog-rating-container > p {
+        font-size: 2.75vh;
+        margin-top: 0.75vh;
+    }
+    
+    .dog-rating-container > button {
+        font-size: 2.75vh;
+        margin: 0 3vw 1vh 2vw;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 400px){   
+     
+    .dogs-header-container {
+        padding: 13pt 35pt 5pt 5pt;
+    }
+    
+    .dogs-header-container > h1 {
+        font-size: 4.5vh;
+    }
+    
+    .dogs-header-container > a > img {
+        height: 4vh;
+    }
+    
+    .dogs-header-container > p {
+        font-size: 4vh;
+        margin: -6pt 5pt 0 13pt;
+    }
+
+    .breed-form-container > h3 {
+        font-size: 5vh;
+        margin-bottom: 1vh;
+    }
+    
+    .breed-form-container > p {
+        font-size: 4vh;
+    }
+    
+    .breed-form-container > select {
+        font-size: 4vh;
+    }
+    
+    .breed-form-container > select option {
+        font-size: 4vh;
+    }
+    
+    .breed-form-container > button {
+        font-size: 3vh;
+    }
+
+    .current-dog-container {
+        padding: 0;
+    }
+    
+    .current-dog-container > .dog-image-container {
+        width: 80vw;
+        height: calc(90vw);
+        margin-top: 1vh;
+    }
+    
+    .dog-rating-container {
+        background-color: rgba(0, 0, 0, 0.568);
+        width: 100%;
+        padding-top: 3pt;
+        border-radius: 0 0 10pt 10pt;
+        box-shadow: rgba(0, 0, 0, 0.479) 0pt -3pt 5pt,
+                    rgba(0, 0, 0, 0.411) 0pt -1pt 1pt,
+                    inset rgba(255, 255, 255, 0.075) 0pt 0.1pt 3pt;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+    }
+    
+    .dog-rating-container > h3 {
+        font-size: 2.5vh;
+        margin-bottom: 1vh;
+    }
+    
+    .dog-rating-container > input {
+        width: 50pt;
+        margin: 5pt 0pt 0 9pt;
+    }
+    
+    .dog-rating-container > p {
+        font-size: 3vh;
+        margin-top: 3pt
+    }
+    
+    .dog-rating-container > button {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 3vh;
+        padding: 2pt 10pt;
+        background-color: rgb(6, 59, 175);
+        border-radius: 25px;
+        outline: none;
+        margin-left: 0pt;
+        margin-bottom: 3pt;
+    }
+}
