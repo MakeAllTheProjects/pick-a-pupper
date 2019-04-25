@@ -95,7 +95,7 @@
     width: 80vw;
     max-width: 400pt;
     height: calc(80vw);
-    max-height: 350pt;
+    max-height: 400pt;
     background-color: rgb(1, 12, 36);
     background-size: cover;
     background-repeat: no-repeat;
@@ -112,6 +112,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    transition: all 4s ease;
 }
 
 .dog-rating-container {

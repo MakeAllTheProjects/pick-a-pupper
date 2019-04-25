@@ -81,6 +81,29 @@
     border-radius: 0 0 10pt 10pt;
 }
 
+.no-dogs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hiding-dog {
+    width: 40vw;
+    border-radius: 15pt;
+    box-shadow: inset black 5pt 5pt 10pt,
+                inset rgb(4, 38, 112) 4pt 4pt 1pt,
+                    rgba(255, 255, 255, 0.103) -1pt -1pt 1pt,
+                    rgba(0, 0, 0, 0.267) 1pt 1pt 1pt,
+                    rgb(2, 18, 53) 5pt 5pt 1pt,
+                    rgba(0, 0, 0, 0.397) 10pt 10pt 5pt,
+                    rgba(0, 0, 0, 0.397) 10pt 10pt 10pt;
+    border-radius: 15pt;
+    border: rgb(4, 36, 105) solid 5pt;
+    margin-bottom: 15pt;
+}
+
 @media screen and (max-width: 1025px) {
  
     .user-heading {
