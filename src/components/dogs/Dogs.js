@@ -57,7 +57,7 @@ class Dogs extends Component {
                     <p className="logout" onClick={this.handleLogout}>Logout</p>
                 </div>
                 <form name="breedForm" className="breed-form-container" onSubmit={this.handleSelectBreed}>
-                    <h3>Hi {this.props.username}!</h3>
+                    <h3>Hi {localStorage.getItem("username")}!</h3>
                     <p>What kind of dog would you like to see?</p>
                     <select name="breedSelection" onChange={this.handleChange} default="any">
                         {this.props.breedList.map((breed, i) => {
