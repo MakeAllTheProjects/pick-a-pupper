@@ -5,7 +5,6 @@ import Header from "../../components/Header"
 export default function User () {
 	const ratings = JSON.parse(localStorage.getItem("ratings")) || []
 
-	console.log(ratings)
 	return (
 		<>
 			<Header />
@@ -17,6 +16,7 @@ export default function User () {
 								className="pupper-picture"
 								key={rating.img}
 								style={{ backgroundImage: `url(${rating.img})` }}
+								title={rating.breed}
 							/>
 							<div className="ratings-ribbon">{rating.rating}</div>
 						</div>

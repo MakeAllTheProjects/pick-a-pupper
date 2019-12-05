@@ -6,8 +6,6 @@ export default function Home ( props ) {
 	const [username, setUsername] = React.useState(localStorage.getItem("username") || "")
 	const [errorMessage, setErrorMessage] = React.useState("")
 
-	console.log(username)
-
 	return (
 		<main className="home">
 			<form

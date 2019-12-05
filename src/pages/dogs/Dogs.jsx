@@ -117,7 +117,6 @@ export default function Dogs () {
 		e.preventDefault()
 		if (selectedBreed === "any" || selectedBreed === "") {
 			await axios.get("https://dog.ceo/api/breeds/image/random").then(res => {
-				console.log(res.data)
 				setSelectedBreedImage(res.data.message)
 			})
 		} else {
