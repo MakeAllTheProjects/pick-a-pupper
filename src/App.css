@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Open+Sans+Condensed:300');
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	min-width: 100vw;
+	padding: 0;
+}
+
+.app {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-image: url('./images/background.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1025px) {
+	.app {
+		background-image: url('./images/background-tablet.png');
+	}
+}
+
+@media screen and (max-width: 400px){
+	.app {
+		background-image: url('./images/background-mobile.png');
+		background-position: bottom;
+	}
+}

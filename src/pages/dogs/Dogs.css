@@ -1,0 +1,402 @@
+.dogs {
+	position: fixed;
+	top: 10vh;
+	bottom: 5vh;
+	left: 15vw;
+	right: 35vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	filter: drop-shadow(rgba(0, 0, 128, 0.726) 1px 1px 5px);
+}
+
+.breed-form {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10vh calc(10vh) 10vh calc(10vh);
+	border-radius: 50%;
+	border: white solid 5px;
+	background-color: rgba(0, 0, 0, 0.25);
+	text-align: center;
+	transition: 1s all ease;
+}
+
+.breed-form:before,
+.breed-form:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	transition: 1s all ease;
+}
+
+.breed-form:before {
+	transform: rotate(-5deg);
+	right: calc(-9.95vh);
+	bottom: 19.75vh;
+	border: calc(5vh) solid;
+	border-color: white transparent transparent white;
+}
+
+.breed-form > h2 {
+	font-size: 5vh;
+	transition: 1s all ease;
+}
+
+.breed-form > p {
+	font-size: 4vh;
+	transition: 1s all ease;
+}
+
+.breed-form > select {
+	color: black;
+	margin-top: 2vh;
+	font-size: 3vh;
+	transition: 1s all ease;
+}
+
+.breed-form > select option {
+	color: black;
+	font-size: 3vh;
+}
+
+.breed-form > button {
+	margin-top: 2vh;
+	padding: 5px 25px 8px 25px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 3vh;
+	color: white;
+	background-color: rgb(6, 59, 175);
+	border-radius: 25px;
+	outline: none;
+	transition: 1s all ease;
+}
+
+.rating-form {
+	position: relative;
+	margin: -10vh calc(10vh) 0 calc(-15vh);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: 1s all ease;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 3vh;
+}
+
+.scale-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 2vh 0 1vh 0;
+}
+
+.scale-container > p {
+	margin: 0 0 0.5vh calc(1vh);
+}
+
+.rating-form > .button-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.button-container > button {
+	margin: 0 calc(1vh) 0 calc(1vh);
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	color: white;
+}
+
+.cancel-button {
+	background-color: rgb(155, 24, 24);
+}
+
+.submit-button {
+	background-color: rgb(50, 0, 100);
+}
+
+.dog-image {
+	position: relative;
+	margin: -10vh 0 0 0;
+	height: 60vh;
+	width: calc(60vh);
+	max-height: 500px;
+	max-width: 500px;
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	border: rgb(50, 0, 100) 10px solid;
+	box-shadow: rgb(50, 0, 150) -2.75vh 0 1px,
+							inset rgba(0, 0, 0, 0.85) 5px 5px 10px,
+							inset rgb(25, 0, 50) -10px 0 1px;
+	transition: 1s all ease;
+}
+
+.belt-hole {
+	position: absolute;
+	height: 1.5vh;
+	width: calc(1.5vh);
+	border-radius: 50%;
+	background-color: black;
+}
+
+.belt-hole.one {
+	top: 35vh;
+	left: calc(-2.75vh);
+}
+
+.belt-hole.two {
+	top: 40vh;
+	left: calc(-1.25vh);
+}
+
+.belt-hole.three {
+	top: 44vh;
+	left: calc(1vh);
+}
+
+.belt-line {
+	position: absolute;
+	top: 55%;
+	left: -7.4%;
+	transform: rotate(-25deg);
+	height: 0.5vh;
+	width: calc(2.8vh);
+	background-color: rgba(0,0,0,0.5);
+}
+
+.chain {
+	position: absolute;
+	bottom: -4.5vh;
+	left: 45%;
+	height: 3vh;
+	width: calc(2vh);
+	max-height: 23px;
+	max-width: 12px;
+	background-color: rgb(200, 150, 50);
+	border-radius: 50%;
+}
+
+.dog-image-label {
+	position: absolute;
+	bottom: -12.5vh;
+	left: 32.5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 8vh;
+	width: calc(16vh);
+	background-color: rgb(200, 150, 50);
+	color: black;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.bone-bump {
+	position: absolute;
+	height: 7.5vh;
+	width: calc(7.5vh);
+	border-radius: 50%;
+	background-color: rgb(200, 150, 50);
+	z-index: -1;
+}
+
+.bone-bump.one {
+	top: -25%;
+	left: -25%;
+}
+
+.bone-bump.two {
+	bottom: -25%;
+	left: -25%;
+}
+
+.bone-bump.three {
+	top: -25%;
+	right: -25%;
+}
+
+.bone-bump.four {
+	bottom: -25%;
+	right: -25%;
+}
+
+@media screen and (max-width: 775px) {
+	.dogs {
+		top: 5vh;
+		bottom: 5vh;
+		left: 5vw;
+		right: 5vw;
+		flex-direction: column;
+	}
+
+	.breed-form {
+		margin: 0 0 40vh 0;
+		padding: 5vh calc(10vh) 5vh calc(10vh);
+		border: white 10px solid;
+	}
+
+	.breed-form:before {
+		transform: rotate(6.5deg);
+		left: calc(20vh);
+		right: 0;
+		bottom: -9.9vh;
+		border: calc(5vh) solid;
+		border-color: white white transparent transparent;
+	}
+
+	.breed-form > p {
+		font-size: 3.5vh;
+	}
+
+	.breed-form > button {
+		font-weight: 600;
+		border-radius: 50px;
+	}
+
+	.rating-form {
+		margin: -4vh 0 4vh 0;
+		font-size: 4vh;
+	}
+
+	.button-container > button {
+		padding: 1vh 4vw 1vh 4vw;
+		font-size: 2.5vh;
+		border-radius: 50px;
+	}
+
+	.dog-image {
+		margin: 0 0 0 0;
+	}
+
+	.belt-hole.one {
+		top: 30vh;
+		left: calc(-2vh);
+	}
+
+	.belt-hole.two {
+		top: 34vh;
+		left: calc(-0.25vh);
+	}
+
+	.belt-hole.three {
+		top: 37.5vh;
+		left: calc(2vh);
+	}
+
+	.chain {
+		bottom: -3.5vh;
+		left: 48.5%;
+	}
+
+	.dog-image-label {
+		bottom: -11.5vh;
+		left: 32.5%;
+		font-size: 3vh;
+		font-weight: 900;
+	}
+
+	.bone-bump.one {
+		top: -25%;
+		left: -25%;
+	}
+
+	.bone-bump.two {
+		bottom: -25%;
+		left: -25%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.breed-form {
+		margin: 0 0 45vh 0;
+		padding: 5vh calc(9vh) 5vh calc(9vh);
+		border: white 8px solid;
+	}
+
+	.breed-form:before {
+		transform: rotate(-65deg);
+		left: calc(3.5vh);
+		right: 0;
+		bottom: -7vh;
+		border-color: transparent white white transparent;
+	}
+
+	.breed-form > p {
+		font-size: 3vh;
+	}
+
+	.breed-form > h2 {
+		font-size: 4vh;
+	}
+
+	.breed-form > button {
+		font-size: 2.75vh;
+	}
+
+	.rating-form {
+		margin: -5vh 0 4vh 0;
+		font-size: 3vh;
+	}
+
+	.scale-container > p {
+		margin: 0 0 0.5vh calc(2vh);
+	}
+
+	.button-container > button {
+		padding: 1vh 4vw 1vh 4vw;
+		font-size: 2vh;
+	}
+
+	.dog-image {
+		margin: 0 -5vw 0 0;
+		height: calc(90vw);
+		width: 90vw;
+	}
+
+	.belt-hole {
+		height: 1.25vh;
+		width: calc(1.25vh);
+	}
+
+	.belt-hole.one {
+		top: 28vh;
+		left: calc(-2vh);
+	}
+
+	.belt-hole.two {
+		top: 31vh;
+		left: calc(-0.9vh);
+	}
+
+	.belt-hole.three {
+		top: 33.5vh;
+		left: calc(0.75vh);
+	}
+
+	.belt-line {
+		top: 60%;
+		left: -8.25%;
+	}
+
+	.chain {
+		bottom: -4.5vh;
+		left: 45%;
+		height: 3vh;
+		width: calc(2vh);
+		max-height: 23px;
+		max-width: 12px;
+	}
+
+	.dog-image-label {
+		bottom: -12.5vh;
+		left: 29%;
+	}
+}

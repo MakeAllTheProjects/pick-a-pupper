@@ -1,0 +1,91 @@
+.user {
+	position: absolute;
+	top: 0vh; 
+	left: 5vw;
+	bottom: 0;
+	right: 5vw;
+	padding: 10vh 0 25vh 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	overflow: auto;
+}
+
+.user::-webkit-scrollbar {
+  width: 0;
+}
+
+.pupper-picture-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.pupper-picture {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10pt;
+	height: 35vh;
+	width: calc(35vh);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	box-shadow: rgba(255, 255, 255, 0.5) 0 0 15px,
+							inset black 0 0 10px,
+							inset black 0 0 30px;
+}
+
+.ratings-ribbon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: -7.5vh 0 0 0;
+	padding: 0 0 3.5vh 0;
+	height: 15vh;
+	width: calc(15vh);
+	background-image: url("../../images/maps-and-flags.svg");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: white;
+	font-family: 'Josefin Slab', serif;
+	font-size: 4vh;
+	font-weight: 900;
+	filter: drop-shadow(black 0 0 5px);
+	overflow: visible;
+	z-index: 2;
+}
+
+@media screen and (max-width: 775px) {
+	.user {
+		left: 2vw;
+		right: 2vw;
+	}
+	
+	.pupper-picture {
+		margin: 10pt;
+		height: 30vh;
+		width: calc(30vh);
+	}
+
+	.ratings-ribbon {
+		margin: -7.5vh 0 3.5vh 0;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.pupper-picture {
+		margin: 10pt;
+		height: 35vh;
+		width: calc(35vh);
+	}
+
+	.ratings-ribbon {
+		margin: -7.5vh 0 3vh 0;
+	}
+}

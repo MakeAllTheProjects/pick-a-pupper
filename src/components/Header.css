@@ -1,0 +1,68 @@
+.dogs-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10pt;
+	z-index: 3;
+}
+
+.dogs-header > a > h1 {
+	color: white;
+	font-family: 'Josefin Slab', serif;
+	font-size: 5vh;
+	text-align: center;
+	filter: drop-shadow(rgba(0, 0, 128, 0.726) 1px 1px 5px);
+}
+
+.dogs-sub-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.dogs-sub-header > a > img {
+	height: 3.5vh;
+	filter: invert(96%);
+	margin: 0 5pt 0 15pt;
+}
+
+.dogs-sub-header > p,
+.dogs-sub-header > a > p {
+	color: white;
+	font-size: 2.75vh;
+	margin: -6pt 5pt 0 30pt;
+}
+
+.dogs-sub-header > .count {
+	margin: 0 -10pt 5pt 15pt;
+}
+
+@media screen and (max-width: 450px) {
+	.dogs-header {
+		margin: 3pt 8pt 0 7pt;
+	}
+
+	.dogs-header > a > h1 {
+		font-size: 3vh;
+	}
+
+	.dogs-sub-header > a > img {
+		height: 3vh;
+		margin: 0 0 0 5pt;
+	}
+
+	.dogs-sub-header > p,
+	.dogs-sub-header > a > p {
+		font-size: 2.75vh;
+		margin: -6pt 0 0 15pt;
+	}
+
+	.dogs-sub-header > .count {
+		margin: 0 0 5pt 5pt;
+	}
+}
