@@ -26,6 +26,15 @@ body {
 
 a {
 	text-decoration: none;
+	outline: none;
+}
+
+.github {
+	position: fixed;
+	bottom: 1vh;
+	left: calc(2vh);
+	height: 7.5vh;
+	filter: drop-shadow(rgba(255, 255, 255, 0.5) 0 0 3px);
 }
 
 @media screen and (max-width: 1025px) {
